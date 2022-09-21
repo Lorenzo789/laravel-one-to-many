@@ -34,10 +34,10 @@
                             </a>
                         </td>
                         <td>
-                            <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST" class="btn btn-danger">
+                            <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST" class="d-inline">
                                 @method('DELETE')
                                 @csrf
-                                <button type="submit">
+                                <button type="submit" class="btn btn-danger">
                                     Delete
                                 </button>
                             </form>
