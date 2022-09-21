@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 
@@ -14,10 +15,12 @@ class PostsTableSeeder extends Seeder
     public function run(Faker $faker)
     {
         //
+        $users = User::all();
+
         for ($i=0; $i < 50; $i++) { 
             $newPost = new Post();
+            $newPost->user_id = $faker->randomElement($users)->id;
             $newPost->title = $faker->realText();
-            $newPost->author = $faker->userName();
             $newPost->post_content = $faker->paragraphs(5, true);
             $newPost->post_image = $faker->imageUrl();
             $newPost->post_date = $faker->date();
