@@ -25,7 +25,7 @@
                 @forelse ($post as $post)
                     <tr>
                         <td>{{ $post->id }}</td>
-                        <td><a href="{{ route('admin.posts.show', $post->id) }}">{{ $post->author }}</a></td>
+                        <td><a href="{{ route('admin.posts.show', $post->id) }}">{{ $post->user->name }}</a></td>
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->post_date }}</td>
                         <td>
