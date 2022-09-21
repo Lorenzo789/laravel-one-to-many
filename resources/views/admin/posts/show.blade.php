@@ -10,7 +10,7 @@
                 <div class="card-body text-center">
                     <h3 class="card-title">{{ $post->title }}</h3>
                     <p class="card-text">{{ $post->post_content }}</p>
-                    <pre>{{ $post->author }} | {{ $post->post_date }}</pre>
+                    <pre>{{ $post->user->name }} | {{ $post->post_date }}</pre>
                 </div>
             </div>
         </div>

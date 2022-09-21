@@ -46,11 +46,11 @@ class PostController extends Controller
         //
         $data = $request->All();
 
-        $data['author'] = Auth::user()->name;
+        $data['user_id'] = Auth::id();
         $data['post_date'] = new DateTime();
 
         Post::create($data);
-        return redirect()->route('admin.index')->with('created', $data['title']);
+        return redirect()->route('admin.index')->with('created', $data['user_id']);
     }
 
     /**
@@ -92,7 +92,7 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
         $data = $request->all();
 
-        $data['author'] = $post->author;
+        $data['user_id'] = $post->user_id;
         $data['post_date'] = $post->post_date;
 
         $post->update($data);
