@@ -4,7 +4,7 @@
 
     @include('admin.posts.includes.form', [
         'routeName' => 'admin.posts.update',
-        'data' => '$post->id',
+        'data' => $post->id,
         'methodName' => 'PUT',
     ])
 
